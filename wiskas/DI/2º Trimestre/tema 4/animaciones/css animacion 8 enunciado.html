@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		#myDIV {
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			animation-name: dos;
+			animation-duration: 4s;
+			animation-timing-function: linear;
+			position: relative;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+
+		@keyframes dos {
+			from {
+				left: 0px;
+				background-color: yellow;
+			}
+			to {
+				left: 450px;
+				background-color: blue;
+			}
+		}
+
+		@keyframes nuevomovimiento {
+			from {
+				top: 0px;
+				left: 0px;
+				background-color: green;
+			}
+			to {
+				top: 450px;
+				left: 450px;
+				background-color: red;
+				border-radius: 60%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<button onclick="myFunction()">Cambiar Horizontal</button>
+	<button onclick="myFunction2()">Cambiar</button>
+
+	<script>
+		function myFunction() {
+			document.getElementById("myDIV").style.animation = "dos 4s linear infinite alternate";
+		}
+
+		function myFunction2() {
+			document.getElementById("myDIV").style.animation = "nuevomovimiento 4s linear infinite alternate";
+		}
+	</script>
+
+	<div id="myDIV"></div>
+
+</body>
+
+</html>

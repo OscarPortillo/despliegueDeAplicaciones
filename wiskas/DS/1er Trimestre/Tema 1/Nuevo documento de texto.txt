@@ -1,0 +1,37 @@
+1.-
+A.-
+la primera pagina estática, porque el contenido nunca cambia
+la segunda y tercera dinamicas, porque interactuan con el usuario y muestra información dinámica.
+
+B.-
+javascript
+
+c.-
+php
+
+D.-
+
+
+2.-
+Apache:
+Última versión estable 2.4.27 - 11/07/2017
+Los módulos del Apache se pueden clasificar en tres categorías:
+Módulos Base: Módulo con las funciones básicas del Apache
+Módulos Multiproceso: son los responsables de la unión con los puertos de la máquina, acepando las peticiones y enviando a los hijos a atender a las peticiones
+Módulos Adicionales: Cualquier otro módulo que le añada una funcionalidad al servidor.
+
+
+Internet Information Services:
+Última versión estable IIS 10.0, Windows 10 y Windows Server 2016
+https://goo.gl/images/qd6H2J
+https://blogs.msdn.microsoft.com/cmarin/2014/10/10/arquitectura-de-iis-7/
+
+
+
+
+
+
+
+
+
+https://www.adictosaltrabajo.com/tutoriales/apache-tomcat-balanceo/

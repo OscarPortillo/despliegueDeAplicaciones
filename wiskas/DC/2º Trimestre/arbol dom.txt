@@ -1,0 +1,31 @@
+5.4.1. Creación de elementos XHTML simples
+Como se ha visto, un elemento XHTML sencillo, como por ejemplo un párrafo, genera dos nodos: el primer nodo es de tipo Element y representa 
+la etiqueta <p> y el segundo nodo es de tipo Text y representa el contenido textual de la etiqueta <p>.
+
+Por este motivo, crear y añadir a la página un nuevo elemento XHTML sencillo consta de cuatro pasos diferentes:
+
+Creación de un nodo de tipo Element que represente al elemento.
+Creación de un nodo de tipo Text que represente el contenido del elemento.
+Añadir el nodo Text como nodo hijo del nodo Element.
+Añadir el nodo Element a la página, en forma de nodo hijo del nodo correspondiente al lugar en el que se quiere insertar el elemento.
+De este modo, si se quiere añadir un párrafo simple al final de una página XHTML, es necesario incluir el siguiente código JavaScript:
+
+// Crear nodo de tipo Element
+var parrafo = document.createElement("p");
+ 
+// Crear nodo de tipo Text
+var contenido = document.createTextNode("Hola Mundo!");
+ 
+// Añadir el nodo Text como hijo del nodo Element
+parrafo.appendChild(contenido);
+ 
+// Añadir el nodo Element como hijo de la pagina
+document.body.appendChild(parrafo);
+El proceso de creación de nuevos nodos puede llegar a ser tedioso, ya que implica la utilización de tres funciones DOM:
+
+createElement(etiqueta): crea un nodo de tipo Element que representa al elemento XHTML cuya etiqueta se pasa como parámetro.
+createTextNode(contenido): crea un nodo de tipo Text que almacena el contenido textual de los elementos XHTML.
+nodoPadre.appendChild(nodoHijo): añade un nodo como hijo de otro nodo. Se debe utilizar al menos dos veces con los nodos habituales: 
+en primer lugar se añade el nodo Text como hijo del nodo Element y a continuación se añade el nodo Element como hijo de algún nodo de la página.
+
+//http://librosweb.es/libro/javascript/capitulo_5/creacion_y_eliminacion_de_nodos.html

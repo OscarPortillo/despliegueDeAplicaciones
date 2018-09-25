@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript">
+		function almacenar() {
+			var db = openDatabase('Mibbdd', '1.0', 'mi base de datos', 2 * 1024 * 1024);
+			db.transaction(function(tx) {
+				tx.executeSql('DROP TABLE if exists tabla'); //viene bien para reanudar la tabla de nuevo y no duplicar valores
+				tx.executeSql('CREATE TABLE IF NOT EXISTS tabla(nombre,apellido)');
+				tx.executeSql('INSERT INTO tabla (nombre,apellido) VALUES ("Profesor","Roberto")');
+				tx.executeSql('INSERT INTO tabla (nombre,apellido) VALUES ("Fulanito","Menganito")');
+			});
+			alert("BBDD inicializada");
+
+			db.transaction(function(tx) {
+				tx.executeSql('SELECT * FROM tabla', [], function(tx, results) {
+					var len = results.rows.length;
+					for (i = 0; i < len; i++) {
+						alert(results.rows.item(i).nombre + " " + results.rows.item(i).apellido);
+					}
+				});
+			});
+		}
+	</script>
+</head>
+
+<body onload="almacenar();">
+</body>
+
+</html>

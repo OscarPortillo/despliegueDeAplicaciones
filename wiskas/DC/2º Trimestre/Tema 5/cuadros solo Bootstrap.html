@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>4 Ejercicio Cuadros Bootstrap - JQuery</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style type="text/css">
+		html,
+		body {
+			height: 100%;
+			width: 100%;
+			text-align: center;
+			background-color: aqua;
+			background: radial-gradient(ellipse farthest-corner at center bottom, #00FFC6, #00A5C6);
+		}
+
+		h1,
+		h2,
+		h3 {
+			text-align: center;
+		}
+
+		div#contenedor {
+			margin: auto;
+			width: 800px;
+			height: 800px;
+		}
+
+		div.cuadrante {
+			width: 48%;
+			height: 48%;
+			margin: 1px;
+			float: left;
+			position: relative;
+		}
+
+		#c1 {
+			box-shadow: -20px 0px 20px 0px #eee inset;
+			bottom: 0px;
+			color: red;
+			right: 0px;
+		}
+
+		#c2 {
+			left: 0px;
+			color: black;
+			bottom: 0px;
+		}
+
+		#c3 {
+			box-shadow: -20px 0px 20px 0px #eee inset;
+			top: 0px;
+			color: darkgoldenrod;
+			left: 0px;
+
+		}
+
+		#c4 {
+			top: 0px;
+			color: darkblue;
+			right: 0px;
+		}
+
+		div.contenido {
+			color: #00A5C6;
+			background-color: whitesmoke;
+			height: 100%;
+			width: 100%;
+			text-align: center;
+			display: flex;
+			flex-wrap: nowrap;
+			position: absolute;
+			overflow: hidden;
+		}
+
+		div.contenido>i {
+			margin: auto;
+		}
+
+		@media only screen and (max-width: 960px) {
+			/* Para pantallas pequeañas */
+			div#contenedor {
+				width: 650px;
+				height: 650px;
+			}
+		}
+
+		@media only screen and (max-width: 768px) {
+			/* Para pantallas pequeañas */
+			div#contenedor {
+				width: 500px;
+				height: 500px;
+			}
+		}
+
+		@media only screen and (max-width: 600px) {
+			/* Para pantallas pequeañas */
+			div#contenedor {
+				width: 400px;
+				height: 400px;
+			}
+		}
+
+	</style>
+	<script>
+		$(document).ready(function() {
+			$('.cuadrante').on({
+				mouseover: function() {
+					desparecer();
+					aparecer();
+				}
+			});
+		});
+
+		function desparecer() {
+			$('#c1').animate({
+				width: "0%",
+				height: "0%"
+			}, 500);
+			$('#c2').delay(500);
+			$('#c2').animate({
+				width: "0%",
+				height: "0%"
+			}, 500);
+			$('#c3').delay(1000);
+			$('#c3').animate({
+				width: "0%",
+				height: "0%"
+			}, 500);
+			$('#c4').delay(1500);
+			$('#c4').animate({
+				width: "0%",
+				height: "0%"
+			}, 500);
+		}
+
+		function aparecer() {
+			$('#c4').delay(1500);
+			$('#c4').animate({
+				width: "100%",
+				height: "100%"
+			}, 500);
+			$('#c3').delay(3000);
+			$('#c3').animate({
+				width: "100%",
+				height: "100%"
+			}, 500);
+			$('#c2').delay(4500);
+			$('#c2').animate({
+				width: "100%",
+				height: "100%"
+			}, 500);
+			$('#c1').delay(6000);
+			$('#c1').animate({
+				width: "100%",
+				height: "100%"
+			}, 500);
+		}
+
+	</script>
+
+</head>
+
+<body>
+	<h1>CUADROS I</h1>
+
+	<div id="contenedor">
+		<div class="cuadrante">
+			<div class="contenido" id="c1">
+				<i class="fa fa-bolt fa-4x" aria-hidden="true"></i>
+			</div>
+		</div>
+		<div class="cuadrante">
+			<div class="contenido" id="c2">
+				<i class="fa fa-battery-half fa-4x" aria-hidden="true"></i>
+			</div>
+		</div>
+		<div class="cuadrante">
+			<div class="contenido" id="c4">
+				<i class="fa fa-anchor fa-4x" aria-hidden="true"></i>
+			</div>
+		</div>
+		<div class="cuadrante">
+			<div class="contenido" id="c3">
+				<i class="fa fa-bug fa-4x" aria-hidden="true"></i>
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+	<script>
+
+
+	</script>
+</body>
+
+</html>

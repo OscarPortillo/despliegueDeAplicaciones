@@ -1,0 +1,20 @@
+div {
+	width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+	position: relative;
+}
+
+/*@keyframes example {
+	from {background-color: yellow;}
+    to {background-color: red;}
+}/**/
+
+
+@keyframes example {
+	from {left: 400px;}
+    to {left: 0px;}
+}/**/
+

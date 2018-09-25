@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+	<title>Arbol Dom 6</title>
+	<script>
+		window.onload = function() {
+			var numeropar1 = 1;
+			var numeropar2 = 1;
+
+			document.getElementById("con").addEventListener("click", function() {
+				document.getElementById("d1").innerHTML += '<p class="parrafos">parrafo de prueba innerHTML ' + numeropar1 + '</p>';
+				numeropar1++;
+			});
+
+
+			document.getElementById("sin").addEventListener("click", function() {
+				var d = document.getElementById("d1");
+				var p = document.createElement("p");
+				var t = document.createTextNode("parrafo de prueba appendChild " + numeropar2);
+				p.appendChild(t);
+				d.appendChild(p);
+				numeropar2++;
+			});
+
+			document.getElementById("pintar").addEventListener("click", function() {
+				var parrafos = document.getElementsByClassName("parrafos");
+				for (var i = 0; i < parrafos.length; i++) {
+					parrafos[i].style.backgroundColor = "#F4FA58";
+				}
+			});
+		}
+	</script>
+</head>
+
+<body>
+	<h2>Codigo HTML original</h2>
+
+	<div id="d1">
+		<p class="parrafos">parrafo de prueba 1</p>
+		<p class="parrafos">parrafo de prueba 2</p>
+		<p class="parrafos">parrafo de prueba 3</p>
+		<p class="parrafos">parrafo de prueba 4</p>
+	</div>
+	<input type="button" name="con" id="con" value="Añadimos con innerHTML">
+	<input type="button" name="sin" id="sin" value="Añadimos con appendChild">
+	<input type="button" name="pintar" id="pintar" value="Pintamos los parrafos de clase 'parrafos'">
+</body>
+</html>

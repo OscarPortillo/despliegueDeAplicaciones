@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <title>jQuery - ejemplo - Selectores 1</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h2>Abra la consola del navegador para ver la ejecución del código.</h2>
+        <p>Párrafo sin clase ni id.</p>
+        <p id="idfoo">Párrafo perteneciente a idfoo</p>
+        <p class="clasebar" id="p1">Párrafo 1 perteneciente a la clase: <em>clasebar.</em></p>
+        <p class="clasebar" id="p2">Párrafo 2 perteneciente a la clase: clasebar.</p>
+        <p class="clasebar" id="p3">Párrafo 3 perteneciente a la clase: clasebar.</p>
+        <p class="clasebar" id="p4">Párrafo 4 perteneciente a la clase: clasebar.</p>
+        <p class="clasebar" id="p5">Párrafo 5 perteneciente a la clase: clasebar.</p>
+        <script>
+            $(document).ready(function(){
+                var $foo=$('#idfoo'); 
+                var $bar=$('.clasebar'); 
+                var $foobar=$('p');
+                console.log($foo.html()); //Devuelve 'Párrafo perteneciente a idfoo'
+                console.log($bar.html()); //Devuelve 'Párrafo 1 perteneciente a la clase: clasebar.';
+                console.log($foobar.html()); //Devuelve 'Párrafo sin clase ni id.'
+                console.log($bar[1].innerHTML); //Devuelve 'Párrafo 2 perteneciente a la clase: clasebar.'
+                //console.log($bar[1].html()); //da error (descomentar para probar)
+                //Recorremos un objeto jQuery
+                //Usamos un bucle jQuery
+                $bar.each(function(index,value){
+                    //en index la funcion recibe el indice del 'array'
+                    //en value la funcion recibe el objeto.
+                    //tenemos (al menos) 4 formas de mostrar el contenido de la selección.
+                    console.log("contenido v0: " + $bar[index].innerHTML);
+                    console.log("contenido v1: " + $(this).html());//muestra los tags internos
+                    console.log("contenido v4: " + $(this).text());//no muestra los tags internos
+                    console.log("contenido v2: " + value.innerHTML);
+                    console.log("contenido v3: " + value.textContent);
+                    //si queremos mostrar un atributo como p. ej. el id:
+                    console.log("El id es: " + $(this).attr("id") + ".");
+                });  
+            });
+        </script>
+    </body>
+</html>

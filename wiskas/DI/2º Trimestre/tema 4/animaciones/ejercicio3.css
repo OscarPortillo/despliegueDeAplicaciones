@@ -1,0 +1,37 @@
+#pelota {
+	width: 100px;
+	height: 100px;
+	animation-name: pelota;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	position: relative;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#jugador1 {
+	width:200px;
+	animation-name: jugador1;
+	animation-duration: 2s;
+	position: relative;
+	animation-iteration-count: infinite;
+}
+#jugador2 {
+	width:200px;
+	margin-left: 200px;
+}
+
+@keyframes pelota {
+	from {
+		left: 0px;
+		transform: rotate(0deg);
+	}
+	to {
+		left: 200px;
+		transform: rotate(360deg);
+	}
+}
+
+
+
+

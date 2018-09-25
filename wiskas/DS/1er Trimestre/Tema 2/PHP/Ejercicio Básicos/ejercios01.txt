@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <?php
+        //ejercicio1
+        $frase = "¿hola";
+        $frase2 = " que tal?";
+        echo $frase . $frase2;
+        ?>
+
+        <br>
+
+        <?php
+        //ejercicio2
+        $num = 2;
+        $num2 = 3;
+        echo $num + $num2;
+        ?>
+
+        <br>
+
+        <?php
+        //ejercicio3
+        $info = phpinfo();
+        ?>
+
+        <br>
+
+
+        <?php
+        //ejercicio4
+        $i;
+        $j;
+        $h = 1;
+        echo '<table border="1">';
+        for ($i = 0; $i < 10; $i++) {
+            echo '<tr>';
+            for ($j = 0; $j < 10; $j++) {
+                echo '<td>' . $h++ . '</td>';
+            }
+            echo '</tr>';
+        }
+        echo '</table>';
+        ?>  
+
+        <br>
+
+        <?php
+        //ejercicio5
+        define("TAM", 10);
+        $i;
+        $j;
+        $h = 1;
+        echo '<table border="1">';
+        for ($i = 0; $i < TAM; $i++) {
+            echo '<tr>';
+            for ($j = 0; $j < TAM; $j++) {
+                if ($i % 2 == 0) {
+                    echo '<td style="background-color:grey;">' . $h++ . '</td>';
+                } else {
+                    echo '<td>' . $h++ . '</td>';
+                }
+            }
+            echo '</tr>';
+        }
+        echo '</table>';
+        ?>
+    </body>
+</html>

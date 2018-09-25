@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<style type="text/css">
+		img {
+			position: absolute;
+		}
+
+		#faro {
+			position: absolute;
+			left: 360px;
+		}
+
+		#luz {
+			position: absolute;
+			left: 460px;
+			top: 78px;
+			/**/
+			animation-name: luz;
+			animation-duration: 4s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+
+		#barco {
+			position: absolute;
+			top: 150px;
+			left:-180px;
+			/**/
+			animation-name: barco;
+			animation-duration: 60s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+
+		#nube {
+			position: absolute;
+			top: 80px;
+			left: 400px;
+			/**/
+			animation-name: nube;
+			animation-duration: 40s;
+			animation-timing-function: ;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+
+		#pajaro1 {
+			position: absolute;
+			top: 10px;
+			left: 500px;
+			animation-name: pajaro1;
+			animation-duration: 10s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+
+		#pajaro2 {
+			position: absolute;
+			top: 270px;
+			left: 520px;
+			animation-name: pajaro2;
+			animation-duration: 15s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+
+		@keyframes luz {
+			from {
+				transform: rotateY(180deg);
+
+			}
+			to {
+				transform: rotateY(360deg);
+
+			}
+		}
+
+		@keyframes nube {
+			from {
+				left: 500px;
+			}
+			to {
+				left: 0px;
+			}
+		}
+
+		@keyframes pajaro1 {
+			from {
+				left: 500px;
+			}
+			to {
+				left: 10px;
+				top: 150px;
+			}
+		}
+
+		@keyframes pajaro2 {
+			from {
+				top: 270px;
+				left: 520px;
+			}
+			to {
+				top: 30px;
+				left: 10px;
+			}
+		}
+
+		@keyframes barco {
+			from {
+				top: 200px;
+				left: -180px;
+			}
+			to {
+				top: 150px;
+				left: 600px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="background">
+		<img src="background.png">
+		<div class="pajaro pajaro2" id="pajaro2"><img src="pajaro.gif"></div>
+		<div id="barco"><img src="barco.png"></div>
+		<div id="faro"><img src="faro.png"></div>
+		<div id="luz"><img src="lightc.png"></div>
+		<div id="nube"><img src="nube.png"></div>
+		<div class="pajaro pajaro1" id="pajaro1"><img src="pajaro.gif"></div>
+
+	</div>
+</body>
+
+</html>
