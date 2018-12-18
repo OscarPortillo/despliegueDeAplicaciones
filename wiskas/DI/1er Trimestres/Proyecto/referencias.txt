@@ -1,5 +1,0 @@
-
-
-https://validator.w3.org/
-http://jigsaw.w3.org/css-validator/
-http://www.accessify.com/tools-and-wizards/developer-tools/list-o-matic/
