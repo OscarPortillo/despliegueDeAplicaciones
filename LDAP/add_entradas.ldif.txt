@@ -1,0 +1,27 @@
+# Unidad organizativa usuarios
+dn: ou=usuarios,dc=daw00,dc=net
+objectClass: organizationalUnit
+ou: usuarios
+
+# Unidad organizativa grupos
+dn: ou=grupos,dc=daw01,dc=net
+objectClass: organizationalUnit
+ou: grupos
+
+# Usuario zipi en la unidad organizativa usuarios
+dn:uid=zipi,ou=grupos,dc=daw01,dc=net
+objectClass: inetOrgPerson
+uid: zipi
+sn: zapatilla
+cn: zipi
+mail: asterix@daw01.net
+userPassword: zapi
+
+# Usuario zape en la unidad organizativa usuarios
+dn: uid=zape, ou=grupos,dc=daw00,dc=net
+objectClass: inetOrgPerson
+uid: zape
+sn: zapatilla
+cn: zape
+mail: zape@daw00.net
+userPassword: zape

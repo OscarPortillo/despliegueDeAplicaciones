@@ -1,0 +1,14 @@
+
+# Cambiamos datos del Usuario zipi en la unidad organizativa usuarios
+dn:uid=zipi,ou=grupos,dc=daw01,dc=net
+add:mobile
+mobile: 99999999
+
+
+dn:uid=zipi,ou=grupos,dc=daw01,dc=net
+delete:mail
+
+dn:uid=zipi,ou=grupos,dc=daw01,dc=net
+changetype: modify
+replace:mail
+mail: zapezape@daw00.net
