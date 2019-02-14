@@ -1,14 +1,14 @@
-dn: ou=usuarios,dc=daw00,dc=net
+dn: ou=usuarios,dc=daw02,dc=net
 objectClass: organizationalUnit
 objectClass: top
 ou: usuarios
 
-dn: ou=grupos,dc=daw00,dc=net
+dn: ou=grupos,dc=daw02,dc=net
 objectClass: organizationalUnit
 objectClass: top
 ou: grupos
 
-dn:uid=minerva,ou=usuarios,dc=daw00,dc=net
+dn:uid=minerva,ou=usuarios,dc=daw02,dc=net
 objectClass: inetOrgPerson
 objectClass: OrganizationalPerson
 objectClass: person
@@ -18,7 +18,7 @@ sn: minerva
 uid: minerva
 userPassword:: bW12ZXJ2YQ== 
 
-dn:uid=saturno,ou=usuarios,dc=daw00,dc=net
+dn:uid=saturno,ou=usuarios,dc=daw02,dc=net
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -28,7 +28,7 @@ sn: saturno
 uid: saturno
 userPassword:
 
-dn: uid=cronos,ou=usuarios,dc=daw00,dc=net
+dn: uid=cronos,ou=usuarios,dc=daw02,dc=net
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -38,7 +38,7 @@ sn: cronos
 uid: cronos
 userPassword:: Y3Jvbm9z
 
-dn:uid=atenea,ou=usuarios,dc=daw00,dc=net
+dn:uid=atenea,ou=usuarios,dc=daw02,dc=net
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -48,16 +48,16 @@ sn: atenea
 uid: atenea
 userPassword:: YXR1bmVh
 
-dn: cn=romanos,ou=grupos,dc=daw00,dc=net
+dn: cn=romanos,ou=grupos,dc=daw02,dc=net
 objectClass: groupOfUniqueNames
 objectClass: top
 cn: romanos
-uniqueMember: uid=minerva,ou=usuarios,dc=daw00,dc=net
-uniqueMember: uid=saturno,ou=usuarios,dc=daw00,dc=net
+uniqueMember: uid=minerva,ou=usuarios,dc=daw02,dc=net
+uniqueMember: uid=saturno,ou=usuarios,dc=daw02,dc=net
 
-dn:cn=griegos,ou=grupos,dc=daw00,dc=net
+dn:cn=griegos,ou=grupos,dc=daw02,dc=net
 objectClass: groupOfUniqueNames
 objectClass: top
 cn: griegos
-uniqueMember: uid=atenea,ou=usuarios,dc=daw00,dc=net
-uniqueMember: uid=cronos,ou=usuarios,dc=daw00,dc=net
+uniqueMember: uid=atenea,ou=usuarios,dc=daw02,dc=net
+uniqueMember: uid=cronos,ou=usuarios,dc=daw02,dc=net

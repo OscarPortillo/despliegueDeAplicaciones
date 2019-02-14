@@ -1,0 +1,20 @@
+TUTORIAL PRINCIPAL  (se adjunta como archivo)
+https://tutobasico.com/instalar-tomcat-windows/
+
+anotacion: 
+ejecuta http://localhost:8080
+
+PINCHA EN EXAMPLES > ELIGE EL SCRIPT HELLO WORLD
+
+
+
+
+
+tomcat
+C:\apache-tomcat-8
+
+jdk
+C:\Program Files\Java\jdk1.8.0_201\bin\javaw.exe
+
+jre
+C:\Program Files\Java\jre1.8.0_201\bin
