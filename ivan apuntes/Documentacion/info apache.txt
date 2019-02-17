@@ -1,0 +1,63 @@
+/etc/apache2/sites-available  (sitios activos)
+
+el 000_default.conf es el sitio que está activo por defecto.
+
+Cada sitio tendrá su propio fichero de configuración.
+- Sus directivas: ServerAdmin y ServerName
+
+DocumentRoot -> dónde está /var/www/html (el directorio donde se colocan las web)
+
+"var" es una partición aparte y ahí van los ficheros que suelen crecer mucho en un sistema informático. Ahí suelen ir ficheros de usuarios, por ejemplo.
+
+También guarda ahí un fichero de ".log" los usuarios que entran, con qué ip y demás. 
+
+
+HOSTS VIRTUALES:
+
+Crear sitios web dentro de apache.
+Aprovechas IP públicas, la configuración de los sitios...
+
+Y lo que permiten es servir varios sitios web en un mismo servidor.
+
+Estos host se alojan en /etc/apache2/sites-available y sites-enabled
+(para que esté activo hay que ir a enabled)
+
+Si Options Indexes FollowSymLinks está desactivado, no podrás ver el contenido más interno de una página web. 
+
+
+
+sitio web: www.sitioweb.com
+
+pagina web del sitio: www.sitioweb.com/pagina.html
+otra página del sitio: www.sitioweb.com/pagina2.html
+
+
+
+
+Alias "/image" "/ftp/pub/image"
+
+si vas a /image irás a /ftp/pub/image, facilitando el acceso más rápido.
+NO es lo mismo que una redirección. Una redirección te puede mandar a otro sitio que no forme parte de la propia página. El alias te manda solo a otra parte de tu sitio web.
+
+
+Haremos hosts virtuales unicamente basándonos en "nombre".
+
+
+Como activar/desactivar un sitio web:
+
+activamos el nuevo host en apache->sudo a2ensite ejemplo.es
+recargamos : service apache2 reload
+si queremos desactvarlo: sudo a2dissite default
+
+Podemos establecer un rango de IP's para que ciertas máquinas puedan/no puedan entrar.
+
+.htaccess restringe el acceso a determinados sitios.
+
+
+ensite Default - activar un host virtual 
+disite Default - desactivar un host virtual
+(solo hay un host virtual por defecto creado, si creas uno nuevo, el por defecto se va automático)
+
+Si tienes un dominio daw02.com, obtendrás dos sitios web (al hacer disite Default, se hace automático al activar otros sitios web) con nombre hardware.daw02.com y software.daw02.com 
+
+Un alias NO es un redireccionador, es un enlace simbólico que te lleva al sitio web del que le habíamos hecho el alias.

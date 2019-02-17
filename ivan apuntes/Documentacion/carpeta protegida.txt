@@ -1,0 +1,10 @@
+Crear carpeta protegida:
+
+authType Basic
+authName "zona restringida"
+authUserFile /etc/apache2/passwd (lo tienes que crear con algo de ht -c que lo mete en passwd y lo cifra)
+Require ivanarasco
+
+esto para que solo este usuario pueda entrar.
+
+auth groupFile
