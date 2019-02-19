@@ -1,0 +1,9 @@
+/var/www/html por que html se pone ? por que puede haber otros tipos de páginas, como por ejemplo relacionadas con el protocolo ftp. En ese caso, tras www iría ftp pues serían páginas de ellos.
+
+
+
+LA PRÁCTICA ES DE LA 321 A LA 341
+
+PD: AuthzLDAPAuthoritative on (si está, no ponerlo)
+
+sudo a2enmod authnz_ldap (hay t al final, no poner t)

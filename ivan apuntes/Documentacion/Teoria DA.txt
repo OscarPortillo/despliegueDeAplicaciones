@@ -1,0 +1,46 @@
+MX -> Mail exchange (añade mail al servidor o identifica servidores de correo).  -> Qué servidor se ocupa del correo de (por ejemplo, la universidad: unizar)
+Add: agregar una máquina.
+CNAME -> Alias (infinitos para un mismo nombre, puedes) / + nombres a una máquina.
+FQDN -> Full quality domain name (nombre completo del dominio.)
+A -> Add (asociar un nombre de dominio FQDN)
+NS -> Name Server.
+
+Búsqueda directa: Preguntas por el nombre y devuelve IP.
+inversa: Preguntas por la IP y devuelve nombre.
+(contrario una a otra)
+__________
+Instalación servidor DNS en UBUNTU:
+
+named (la d es de demonio): nombre de proceso en Linux.
+
+type master (en la zona) -> que es un servidor primario (solo se puede uno para una zona)
+file -> donde están ubicadas todas las máquinas. (db es la base de datos de las máquinas de la zona)
+
+__________
+
+Entras en hosts, pones una dirección IP y vas a una página web y te puede llevar a otra sin percatarte.
+
+
+
+
+
+Un servidor dns puede tener bajo su poder varios dominios. Microsoft.com es un dominio.
+
+Un servidor dns puede tener bajo su poder varias zonas a su vez. 
+
+Los dominios los llevan servidores dns por tanto.
+
+Las máquinas tienen unos registros (llamados RR) y está: el SOA (Información general del dominio; tiempo de vida, actualización... no necesaria.)
+
+Se cargan en memoria los Servidores DNS por la velocidad a la que tienen que funcionar.
+
+PTR: Variable que apunta a una dirección de memoria (puntero) pero luego puede apuntar a otro lugar. Suele ser un objeto.
+Si después de borrar a lo que apuntas intentas acceder a ello, suele dar pantallazo azul: punteros locos.
+
+HOST A = ADD
+
+
+
+HTTPS SI VA CIFRADO
+HTTP no va cifrado.
+La S del final es de SECURE

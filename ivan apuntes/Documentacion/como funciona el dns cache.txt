@@ -1,0 +1,1 @@
+Servidor DNS Caché almacena los ping que vamos haciendo y las operaciones en sí del servidor.
