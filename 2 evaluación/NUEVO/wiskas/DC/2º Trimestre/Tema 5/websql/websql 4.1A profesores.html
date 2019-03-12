@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript">
+		function almacenar() {
+			var db = openDatabase('centro', '1.0', 'mi base de datos', 2 * 1024 * 1024);
+			db.transaction(function(tx) {
+				tx.executeSql('DROP TABLE if exists profesor'); //viene bien para reanudar la notas de nuevo y no duplicar valores
+				tx.executeSql('CREATE TABLE IF NOT EXISTS profesor(idProfesor, nombreProfesor,idAsignatura)');
+				
+				tx.executeSql('INSERT INTO profesor (idProfesor, nombreProfesor, idAsignatura) VALUES ("1","Rafa","1")');
+				tx.executeSql('INSERT INTO profesor (idProfesor, nombreProfesor, idAsignatura) VALUES ("1","Rafa","2")');
+				tx.executeSql('INSERT INTO profesor (idProfesor, nombreProfesor, idAsignatura) VALUES ("1","Rafa","3")');
+				tx.executeSql('INSERT INTO profesor (idProfesor, nombreProfesor, idAsignatura) VALUES ("2","Roberto","4")');
+				tx.executeSql('INSERT INTO profesor (idProfesor, nombreProfesor, idAsignatura) VALUES ("2","Roberto","5")');
+				tx.executeSql('INSERT INTO profesor (idProfesor, nombreProfesor, idAsignatura) VALUES ("3","Alberto","2")');
+				tx.executeSql('INSERT INTO profesor (idProfesor, nombreProfesor, idAsignatura) VALUES ("3","Alberto","3")');
+				tx.executeSql('INSERT INTO profesor (idProfesor, nombreProfesor, idAsignatura) VALUES ("3","Alberto","5")');
+			});
+			alert("BBDD inicializada");
+
+			db.transaction(function(tx) {
+				tx.executeSql('SELECT * FROM profesor p inner join asignatura a on p.idAsignatura=a.idAsignatura where nombreProfesor="Alberto"', [], function(tx, results) {
+					var len = results.rows.length;
+					var todo = "Consulta A:";
+					for (i = 0; i < len; i++) {
+						todo = todo + "<br>" + results.rows.item(i).nombreAsignatura + " " + results.rows.item(i).curso + " " + results.rows.item(i).nombreProfesor;
+						//alert(results.rows.item(i).idAlumno + " " + results.rows.item(i).idAsignatura + " " + results.rows.item(i).calificacion);
+					}
+					document.body.innerHTML = todo;
+				});
+			});
+		}
+	</script>
+</head>
+
+<body onload="almacenar();">
+</body>
+</html>

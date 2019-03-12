@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript">
+		function almacenar() {
+			var db = openDatabase('miAlquiler', '1.0', 'mi base de datos', 2 * 1024 * 1024);
+			db.transaction(function(tx) {
+				tx.executeSql('DROP TABLE if exists vehiculos');
+				tx.executeSql('DROP TABLE if exists usuarios');
+				tx.executeSql('DROP TABLE if exists informes');
+
+				tx.executeSql('CREATE TABLE IF NOT EXISTS vehiculos(idVehiculo, matricula,marca,modelo,color,estado)');
+				tx.executeSql('CREATE TABLE IF NOT EXISTS usuarios(idUsuario, nombre,dni,carnet)');
+				tx.executeSql('CREATE TABLE IF NOT EXISTS informes(idVehiculo, idUsuario,fechaInicio,fechaFin)');
+
+				tx.executeSql('INSERT INTO vehiculos (idVehiculo, matricula,marca,modelo,color,estado) VALUES ("1","1111AAA","Opel","Astra","Negro","Ocupado")');
+				tx.executeSql('INSERT INTO vehiculos (idVehiculo, matricula,marca,modelo,color,estado) VALUES ("2","2222AAA","Opel","Insignia","Blanco","Ocupado")');
+				tx.executeSql('INSERT INTO vehiculos (idVehiculo, matricula,marca,modelo,color,estado) VALUES ("3","3333AAA","Opel","Mokka","Rojo","Libre")');
+				tx.executeSql('INSERT INTO vehiculos (idVehiculo, matricula,marca,modelo,color,estado) VALUES ("4","4444AAA","Opel","Crossland X","Gris","Libre")');
+				tx.executeSql('INSERT INTO vehiculos (idVehiculo, matricula,marca,modelo,color,estado) VALUES ("5","5555AAA","Opel","Ampera","Azul","Ocupado")');
+
+				tx.executeSql('INSERT INTO usuarios(idUsuario, nombre, dni, carnet) VALUES ("1", "Jaime", "11111111A","B")');
+				tx.executeSql('INSERT INTO usuarios(idUsuario, nombre, dni, carnet) VALUES ("2", "Sergio", "22222222A","B")');
+				tx.executeSql('INSERT INTO usuarios(idUsuario, nombre, dni, carnet) VALUES ("3", "Pilar", "33333333A","A1")');
+				tx.executeSql('INSERT INTO usuarios(idUsuario, nombre, dni, carnet) VALUES ("4", "Jose Francisco", "44444444A","A2")');
+				tx.executeSql('INSERT INTO usuarios(idUsuario, nombre, dni, carnet) VALUES ("5", "Teresa", "55555555A","B")');
+
+				tx.executeSql('INSERT INTO informes(idVehiculo, idUsuario,fechaInicio,fechaFin) VALUES ("5","1","05/01/2018","")');
+				tx.executeSql('INSERT INTO informes(idVehiculo, idUsuario,fechaInicio,fechaFin) VALUES ("1","2","12/01/2018","")');
+				tx.executeSql('INSERT INTO informes(idVehiculo, idUsuario,fechaInicio,fechaFin) VALUES ("2","3","23/01/2018","")');
+
+				var estadoVehiculo = tx.executeSql('SELECT estado FROM vehiculos v WHERE v.idVehiculo=1');
+				alert(estadoVehiculo);
+				if(estadoVehiculo=="Libre"){
+				   tx.executeSql('DELETE FROM vehiculos v WHERE v.idVehiculo=1');
+					alert("el vehiculo con id=1, ha sido eliminado.")
+				   }else{
+					   alert("el vehiculo con id=1, está ocupado.")
+				   }
+
+				var estadoVehiculo = tx.executeSql('SELECT estado FROM vehiculos v WHERE v.idVehiculo=3');
+				alert(estadoVehiculo);
+				if(estadoVehiculo=="Libre"){
+				   tx.executeSql('DELETE FROM vehiculos v WHERE v.idVehiculo=3');
+					alert("el vehiculo con id=3, ha sido eliminado.")
+				   }else{
+					   alert("el vehiculo con id=3, está ocupado.")
+				   }
+				
+			});
+			alert("BBDD inicializada");
+
+		}
+	</script>
+</head>
+
+<body onload="almacenar();">
+</body>
+
+</html>

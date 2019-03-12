@@ -1,0 +1,9 @@
+systemctl stop apache2
+systemctl start apache2
+systemctl status apache2
+apachectl -M
+
+PORTADA ESTATICA - TUS ULTIMAS ENTRADAS
+
+wget
+tar xvfz

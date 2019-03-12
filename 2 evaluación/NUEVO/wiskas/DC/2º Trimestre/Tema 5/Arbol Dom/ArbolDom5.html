@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Ejercicio DOM</title>
+	<script type="text/javascript">
+		
+		document.onreadystatechange = mifuncion();
+		//window.onload =mifuncion();
+		function mifuncion() {
+			if (document.readyState == 'loading') {
+				alert("loading");
+				//document.getElementById("div1").innerHTML = "loading";
+				//alert("w");
+			} else if (document.readyState == 'interactive') {
+				alert("interactive");
+				//document.getElementById("div2").innerHTML="interactive";
+			} else if (document.readyState == "complete") {
+				alert("complete");
+				//document.getElementById("div3").innerHTML="complete";
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<p id="div1">123</p>
+	<p id="div2">456</p>
+	<p id="div3">789</p>
+</body>
+
+</html>

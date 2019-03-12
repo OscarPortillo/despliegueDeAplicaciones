@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>jQuery - ejemplo - Selectores 1</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<h2>Abra la consola del navegador para ver la ejecución del código.</h2>
+	<p>Párrafo sin clase ni id.</p>
+	<p id="idfoo">Párrafo perteneciente a idfoo</p>
+	<p class="clasebar" id="p1">Párrafo 1 perteneciente a la clase: <em>clasebar.</em></p>
+	<p class="clasebar" id="p2">Párrafo 2 perteneciente a la clase: clasebar.</p>
+	<p class="clasebar" id="p3">Párrafo 3 perteneciente a la clase: clasebar.</p>
+	<p class="clasebar" id="p4">Párrafo 4 perteneciente a la clase: clasebar.</p>
+	<p class="clasebar" id="p5">Párrafo 5 perteneciente a la clase: clasebar.</p>
+	<script>
+		$(document).ready(function() {
+			var $foo = $('#idfoo');
+			var $bar = $('.clasebar');
+			var $foobar = $('p');
+
+			//a) Párrafo perteneciente a idfoo
+			//b) Párrafo 1 perteneciente a la clase: <em>clasebar.</em>
+			//c) Párrafo sin clase ni id.
+			//d) Párrafo 2 perteneciente a la clase: clasebar.
+
+			console.log("parrafo perteneciente a idfoo: " + $foo.html()); //a
+			console.log("parrafo perteneciente a la clase clasebar: " + $bar.html()); //b
+			console.log("parrafo sin clase ni id: " + $foobar.html()); //c
+			console.log("parrafo 2 perteneciente a la clase clasebar: " + $bar[1].innerHTML); //d
+			
+			$foo.css("background-color", "yellow");
+
+			$bar.each(function(index, value) {
+				console.log("contenido: " + $(this).html());
+				console.log("El id es: " + $(this).attr("id") + ".");
+				//e) Empleando el metodo each como si fuera un for: $bar.each(function(index,value) 
+				//En index se recibe el indice del array y en value se recibe el objeto y mostrar: 
+				//El id es: p1
+				//Párrafo 1 perteneciente a la clase: <em>clasebar.</em>
+				//El id es: p2
+				//Párrafo 2 perteneciente a la clase: clasebar.
+				//El id es: p3
+				//Párrafo 3 perteneciente a la clase: clasebar.
+				//El id es: p4 
+				//Párrafo 4 perteneciente a la clase: clasebar.
+				//El id es: p5 
+				//Párrafo 5 perteneciente a la clase: clasebar.
+			});
+		});
+
+	</script>
+</body>
+
+</html>

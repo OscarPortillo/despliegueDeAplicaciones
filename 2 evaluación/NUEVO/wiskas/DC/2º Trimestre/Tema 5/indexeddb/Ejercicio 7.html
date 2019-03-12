@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript">
+		// ayuda--> http://blog.koalite.com/2015/10/como-se-usa-indexeddb/
+		// Compatibilidad navegadores
+		var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB || window.shimIndexedDB;
+
+		// Abrir conexion BDD
+		var open = indexedDB.open("MyDatabase", 1);
+
+		// Crear almacen de objetos
+		open.onupgradeneeded = function() {
+			var db = open.result;
+			var store = db.createObjectStore("MyObjectStore", {
+				keyPath: "id"
+			}); //Crear almacen de objetos
+			var index = store.createIndex("NameIndex", "fechaCreacion"); // Crear un indice en nuestro almacen de objetos que hemos creado en la linea anteior
+		};
+
+		open.onsuccess = function() {
+			// Transaccion
+			var db = open.result;
+			var tx = db.transaction("MyObjectStore", "readwrite");
+			var store = tx.objectStore("MyObjectStore");
+			var index = store.index("NameIndex");
+
+			// Insertar objetos en el almacen de datos
+			addTask(1, "tarea1", false, "13:59:21-05/02/2018");
+			addTask(2, "tarea2", false, "15:25:34-05/02/2018");
+			addTask(3, "tarea3", false, "16:35:37-05/02/2018");
+			addTask(4, "tarea4", false, "17:45:31-05/02/2018");
+
+			// Obtener objetos de nuestro almacen 
+			for (i = 1; i < 5; i++) {
+				getTasks(i);
+			}
+
+			// Actualizar objetos de nuestro almacen
+			updateTask(2, true);
+
+			// Eliminar objetos de nuestro almacen 
+			removeTask(1);
+
+			// Cerrar la conexion BDD al finalizar la operacion
+			tx.oncomplete = function() {
+				db.close();
+			};
+
+			// Funciones:
+			function addTask(id, descripcion, completado, fechaCreacion) {
+				store.put({
+					id: id,
+					descripcion: descripcion,
+					completado: completado,
+					fechaCreacion: fechaCreacion,
+				});
+			}
+
+			function getTasks(id) {
+				var idv = store.get(id);
+				idv.onsuccess = function() {
+					console.log(idv.result);
+				};
+			}
+
+			function updateTask(id, completado) {
+				store.put({
+					id: id,
+					completado: completado,
+				});
+			}
+
+			function removeTask(id) {
+				store.delete(id);
+			}
+		}
+
+	</script>
+</head>
+
+<body windows.onload="almacenar();">
+	<p id="parrafo"></p>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript">
+		function almacenar() {
+			var db = openDatabase('centro', '1.0', 'mi base de datos', 2 * 1024 * 1024);
+			alert("BBDD inicializada");
+
+			db.transaction(function(tx) {
+				tx.executeSql('SELECT * FROM notas ORDER BY calificacion', [], function(tx, results) {
+					var len = results.rows.length;
+					var todo="";
+					for (i = 0; i < len; i++) {
+						todo=todo+"<br>"+results.rows.item(i).idAlumno + " " + results.rows.item(i).idAsignatura + " " + results.rows.item(i).calificacion;
+						//alert(results.rows.item(i).idAlumno + " " + results.rows.item(i).idAsignatura + " " + results.rows.item(i).calificacion);
+					}
+					document.body.innerHTML = todo;
+				});
+			});
+		}
+	</script>
+</head>
+
+<body onload="almacenar();">
+</body>
+</html>

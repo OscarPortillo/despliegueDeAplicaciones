@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>jQuery- ejemplo no-conflict</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+        <script>
+            var aliasJQuery=jQuery.noConflict();
+            //podemos poner el alias que mas nos guste. A partir de aqui lo usamos asi:
+            aliasJQuery(document).ready(function(){
+                aliasJQuery('#boton1').click(function(){
+                    aliasJQuery('#p1').html("Prueba de jQuery en modo no-conflict");
+                });
+            });
+            //normalmente usaremos una alias corto del tipo: 'jq'.
+        </script>
+    </head>
+    <body>
+        <input type="button" value="prueba jQuery" id="boton1">
+        <p>Al pulsar el boton se mostrará debajo el texto "Prueba de jQuery en modo no-conflict"</p>
+        <p id="p1">Texto que se cambiará</p>
+        <p>Se usa un alias y el método noConflict() para poder usar $ sin conflicto.</p>
+    </body>
+</html>

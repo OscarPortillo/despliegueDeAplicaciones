@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Ejercicio DOM</title>
+
+	<script type="text/javascript">
+		function cambiar() {
+			if (document.getElementById("myCheck").style.opacity == '1') {
+				document.getElementById("myCheck").style.opacity = '0';
+			} else {
+				document.getElementById("myCheck").style.opacity = '1';
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<form name="formulario">
+		<input type="text" id="myCheck" name="color" value="rojo" onclick="cambiar()">
+
+	</form>
+
+</body>
+
+</html>

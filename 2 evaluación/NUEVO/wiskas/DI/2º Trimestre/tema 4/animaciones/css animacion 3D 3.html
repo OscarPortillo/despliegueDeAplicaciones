@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		#semaforo {
+			border-color: black;
+			border-style: solid;
+			background-color: black;
+			top: 100px;
+			left: 100px;
+			width: 120px;
+			height: 320px;
+			border-radius: 30%;
+		}
+
+		#rojo {
+			top: 10px;
+			left: 10px;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			background-color: red;
+			opacity: 0.2;
+			position: relative;
+			animation-name: rojo;
+			animation-duration: 5s;
+		}
+
+
+		#naranja {
+			top: 10px;
+			left: 10px;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			background-color: orange;
+			opacity: 0.2;
+			position: relative;
+			animation-name: naranja;
+			animation-delay: 5s;
+			animation-duration: 1s;
+		}
+
+		#verde {
+
+			top: 10px;
+			left: 10px;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			background-color: green;
+			opacity: 0.2;
+			position: relative;
+			animation-name: verde;
+			animation-delay: 6s;
+			animation-duration: 4s;
+		}
+
+
+		/* Empleando las siguientes propiedades genera una animación. animation-timing-function: cubic-bezier y translate3d */
+
+		@keyframes rojo {
+			0%,
+			100% {
+				opacity: 1;
+			}
+		}
+
+		@keyframes naranja {
+			0%,
+			100% {
+				opacity: 1;
+			}
+		}
+
+		@keyframes verde {
+			0%,
+			100% {
+				opacity: 1;
+			}
+		}
+
+	</style>
+</head>
+
+<body>
+	<div id="semaforo">
+		<div id="rojo"></div>
+		<div id="naranja"></div>
+		<div id="verde"></div>
+	</div>
+</body>
+
+</html>

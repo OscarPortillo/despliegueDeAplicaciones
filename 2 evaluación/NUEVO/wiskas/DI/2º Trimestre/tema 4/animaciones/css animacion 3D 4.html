@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		h1 {
+			background-color: blue;
+			top: 100px;
+			left: 200px;
+			width: 250px;
+			position: relative;
+			animation-name: animacion;
+			animation-duration: 10s;
+
+		}
+
+
+		/* Empleando las siguientes propiedades genera una animación. animation-timing-function: cubic-bezier y translate3d */
+
+		@keyframes animacion {
+			0% {
+				transform: rotate(0deg);
+				opacity: 1;
+			}
+			15% {
+				transform: rotate(20deg);
+				opacity: 1;
+			}
+			30% {
+				transform: rotate(-20deg);
+				opacity: 1;
+			}
+			41%,
+			100% {
+				transform: perspective(100px) translate3d(10px,10px,-100px) rotate(120deg);
+				opacity: 0;
+				
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+
+
+	<h1>Animaciones 3D</h1>
+
+</body>
+
+</html>
